@@ -1,0 +1,83 @@
+.productDetails{
+    font-size: 100%;
+    width: 100%;
+    min-height: 40rem !important;
+    padding: 0 5rem;
+    display: flex;
+    box-sizing: border-box;
+}
+.productDetails .carouselCon{
+    width: 50%;
+}
+.carouselImage{
+    margin: auto;
+    display: block;
+    max-width: 100%;
+}
+.productDetails .detailCon{
+    width: 50%;
+}
+.productDetails .detailCon>div{
+    margin: 0 1rem;
+    padding: 1rem 0;
+}
+.detailCon .productName{
+    font-size: 1.6rem;
+    border-bottom: 1px solid rgb(176, 176, 176);
+}
+.detailCon .productRating{
+    border-bottom: 1px solid rgb(176, 176, 176);
+
+}
+.detailCon .productPrice{
+    font-size: 1.6rem;
+}
+.detailCon .productAddToCard{
+    border-bottom: 1px solid rgb(176, 176, 176);
+}
+.detailCon .productAddToCard .incDec{
+    border: none;
+    outline: none;
+    background-color: #6d6d6d;
+    height: 100%;
+    padding: 0.5rem 0.3rem;
+    color: white;
+    cursor: pointer;
+}
+.detailCon .productAddToCard .incDec:hover{
+    background-color: #1d1d1d;
+}
+.productAddToCard input{
+    border: none;
+    outline: none;
+    width: 2rem;
+    text-align: center;
+}
+.addToCardBtn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.3rem 1rem;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    margin-left: 1rem;
+}
+.prductDesc div:nth-child(1){
+    font-size: 1.4rem;
+}
+.prductDesc div:nth-child(2){
+    font-size: 0.9rem;
+    color: #494949;
+}
+
+@media (max-width:768px) {
+    .productDetails{
+        flex-direction: column;
+        gap: 1rem !important;
+        padding: 0 1rem;
+    }
+    .productDetails>div{
+        width: 100% !important;
+    }
+}

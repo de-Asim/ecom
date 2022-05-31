@@ -1,0 +1,35 @@
+.loaderContainer{
+    /* background-color: red; */
+    height: calc(100vh - 17px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-screen:600px) {
+    .loaderContainer{
+        height: 100vh;
+    }
+}
+.loader{
+    min-width: 8rem;
+    min-height:8rem;
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    animation: loaderSpin infinite linear 1.5s;
+}
+@keyframes loaderSpin {
+    0%{
+        transform:rotate(0deg);
+        border-bottom: 5px solid gold;
+    }
+    50%{
+        transform:rotate(180deg);
+        border-bottom: 5px solid tomato;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-bottom: 5px solid gold;
+    }
+}

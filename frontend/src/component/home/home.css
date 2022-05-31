@@ -1,0 +1,41 @@
+.productContainer{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #F0F0F0;
+    padding: 2rem;
+    padding-top: 5rem;
+    gap: 1rem;
+}
+.paginationContainer{ 
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.pagination{
+    display: flex;
+    list-style: none;
+}
+.page-item{
+    border: 1px solid rgb(158, 158, 158);
+    padding: 0.4rem 0.8rem;
+}
+.page-item:hover{
+    background-color: #F0F0F0;
+}
+.page-link{
+    text-decoration: none;
+    color: black;
+}
+.pageItemActive{
+    background-color: #1976D2;
+    border: none;
+    color: white;
+}
+.pageItemActive:hover{
+    background-color: #1976D2;
+}
+.pageLinkActive{
+    color: white;
+}

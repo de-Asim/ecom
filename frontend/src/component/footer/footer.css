@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+.footer1{
+    padding: 3rem 2rem;
+    display: flex;
+    gap: 1rem;
+    background-color: rgb(23,35,55);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.footer1-content{
+    max-width: 15rem;
+}
+.footer1-content ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 0.2rem;
+}
+.footer1-content ul li a{
+    text-decoration: none;
+    color: rgb(214, 214, 214);
+    text-transform: capitalize;
+}
+.footer1-content-heading{
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: rgb(172, 172, 172);
+    text-transform: uppercase;
+}
+.footer1-content-text{
+    color: rgb(214, 214, 214);
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+.footer2{
+    background-color: rgb(21, 31, 48);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    padding: 0.5rem 0;
+}
+@media (max-width:768px) {
+    .footer1{
+        padding: 3rem 1rem !important;
+    }
+    .footer1-content{
+        max-width: 40% !important;
+    }
+}
