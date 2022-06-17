@@ -19,7 +19,8 @@ exports.getAllProducts = asyncErr(async (req, res) => {
   const resultPerPage=10
   const apiFeature = new ApiFeature(Product.find(), req.query)
   .search()
-  .filter();
+  .filter()
+  .category();
   let allProducts = await apiFeature.query;
   const productsCount=allProducts.length
   apiFeature.pagination(resultPerPage);
@@ -105,7 +106,7 @@ exports.productReview = asyncErr(async (req, res, next) => {
     });
     await product.save({validateBeforeSave:false});
   } else {
-    product.reviews.push(review);
+    product.reviews.unshift(review);
     product.numOfReviews = product.reviews.length;
     await product.save({validateBeforeSave:false});
   }

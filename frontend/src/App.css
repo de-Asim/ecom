@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --black:#131820 ;
+    --orange:#FFAB4C ;
+  }
+  
 *{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 html{
     font-size: 100%;
 }
-.belowHeader{
-    margin-top: 17px;
-    margin-top: 5rem;
-}
+
 
 @media (max-width:1000px) {
     html{
-        font-size: 80%;
+        font-size: 90%;
     }
 }
 @media (max-width:600px) {

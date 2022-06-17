@@ -15,6 +15,13 @@ class ApiFeature{
         this.query = this.query.find({...keyword});
         return this;
     }
+    category(){
+        const category= this.queryStr.category
+        if(category){
+                this.query = this.query.find({category});
+        }
+        return this;
+    }
     filter(){
         const filterQuery = {...this.queryStr};
         const removeStr = ["keyward","page","limit"]

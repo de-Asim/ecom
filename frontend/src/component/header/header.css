@@ -1,0 +1,146 @@
+.primaryNav{
+    width: 100%;
+    background-color: #131820;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.primaryNavContentBox{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding:.6rem 1rem;
+    gap: 6rem;
+}
+.primaryNavContentBoxLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.homeLink{
+    text-decoration: none;
+    color: white;
+}
+.navLogo span{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.primaryNav .search{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.primaryNav .search input{
+    border: none;
+    outline: none;
+    padding:0.7rem;  
+    width: 30rem;
+}
+.primaryNav .search button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    padding:0.5rem 0.7rem; 
+    cursor: pointer; 
+    background-color: #FFAB4C;
+}
+.primaryNavContentBoxRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.primaryNavContentBoxRight>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+}
+.logInNavBtn{
+    background-color: var(--orange);
+    color: black;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding:0.6rem 1rem;
+    }
+    .logInNavBtn>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    }
+
+.belowHeader{
+    margin-top: 3.7rem;
+}
+.navLinkReset{
+    color: white;
+    text-decoration: none;
+}
+@media (max-width:1150px) {
+    .primaryNav .search input{
+        width: 20rem;
+    }
+}
+@media (max-width:1000px) {
+    .primaryNav .search button{
+        padding: 0.55rem 0.7rem;
+    }
+}
+@media (max-width:885px) {
+    .primaryNavContentBox{
+        gap: 3rem;
+    }
+    .primaryNavContentBoxLeft{
+        gap: 1rem;
+    }
+    .primaryNavContentBoxRight{
+        gap: 1rem;
+    }
+}
+@media (max-width:768px) {
+    .primaryNav{
+        position: static;
+    }
+    .primaryNavContentBox{
+        justify-content: space-between !important;
+    }
+    .primaryNav .search{
+        position: absolute;
+        background-color: #131820;
+        top:2.9rem ;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        padding-bottom: 0.6rem;
+    }
+    .primaryNav .search input{
+        width: calc(100% - 4.8rem);
+    }
+    .belowHeader{
+        margin-top: 6rem !important;
+    }
+    .belowHeader{
+        margin-top: 3.1rem !important;
+    }
+    .logInNavBtn{
+        padding: 0.5rem 1rem;
+    }
+}
+@media (max-width:450px) {
+    .mobileHide{
+        display: none;
+    }
+}

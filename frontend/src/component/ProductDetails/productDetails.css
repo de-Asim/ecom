@@ -4,6 +4,7 @@
     min-height: 40rem !important;
     padding: 0 5rem;
     display: flex;
+    flex-wrap: wrap;
     box-sizing: border-box;
 }
 .productDetails .carouselCon{
@@ -70,7 +71,35 @@
     font-size: 0.9rem;
     color: #494949;
 }
-
+.reviewCon{
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+}
+.reviewCon>div{
+    padding: 0 1rem;
+}
+.reviewLeft{
+    width:27%;
+}
+.reviewMid{
+    width: 46%;
+}
+.reviewCon .reviewHeading{
+    font-size:1.5rem ;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.reviewCardCon{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.noReviewFound{
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+}
 @media (max-width:768px) {
     .productDetails{
         flex-direction: column;
@@ -78,6 +107,13 @@
         padding: 0 1rem;
     }
     .productDetails>div{
+        width: 100% !important;
+    }
+    .reviewCon{
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    .reviewCon>div{
         width: 100% !important;
     }
 }

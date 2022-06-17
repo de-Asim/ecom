@@ -1,20 +1,19 @@
-import { ALL_PRODUCT_FAIL, ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, CLEAR_ERRORS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS }from "../constants/productConstant"
-export const productReducer =((state={ products:[]},action)=>{
+import { ALL_CATEGORY_FAIL, ALL_CATEGORY_REQUEST, ALL_CATEGORY_SUCCESS, CLEAR_ERRORS, FRONTPAGE_CATEGORY_FAIL, FRONTPAGE_CATEGORY_REQUEST, FRONTPAGE_CATEGORY_SUCCESS } from "../constants/categoryConstant";
+
+export const AllCategoryReducer =((state={ AllCategories:[]},action)=>{
 
     switch(action.type){
-        case ALL_PRODUCT_REQUEST:
+        case ALL_CATEGORY_REQUEST:
             return {
                 loading:true,
-                products:[]
+                AllCategories:[]
             };
-        case ALL_PRODUCT_SUCCESS:
+        case ALL_CATEGORY_SUCCESS:
             return {
                 loading:false,
-                products:action.payload.allProducts,
-                productsCount:action.payload.productsCount,
-                resultPerPage:action.payload.resultPerPage
+                AllCategories:action.payload.AllCategories,
             };
-        case ALL_PRODUCT_FAIL:
+        case ALL_CATEGORY_FAIL:
             return {
                 loading:false,
                 error:action.payload
@@ -28,19 +27,20 @@ export const productReducer =((state={ products:[]},action)=>{
             return state
     }
 })
-export const productDetailsReducer =((state={ product:{}},action)=>{
+export const FrontPageCategoryReducer =((state={ frontPageCategories:[],loading:true},action)=>{
 
     switch(action.type){
-        case PRODUCT_DETAILS_REQUEST:
+        case FRONTPAGE_CATEGORY_REQUEST:
             return {
                 loading:true,
+                frontPageCategories:[]
             };
-        case PRODUCT_DETAILS_SUCCESS:
+        case FRONTPAGE_CATEGORY_SUCCESS:
             return {
                 loading:false,
-                product:action.payload.product
+                frontPageCategories:action.payload.categories,
             };
-        case PRODUCT_DETAILS_FAIL:
+        case FRONTPAGE_CATEGORY_FAIL:
             return {
                 loading:false,
                 error:action.payload

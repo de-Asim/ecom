@@ -13,8 +13,8 @@ export default function Product(props) {
   return (
     <>
       {props.product && (
-        <Link className="link" to={`/product/${props.product._id}`}><Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
+        <Link className="link" to={`/product/${props.product._id}`}><Card sx={{ maxWidth: "calc(50vw - 1rem)" }}>
+          <CardActionArea >
             <CardMedia
               component="img"
               height="240"
@@ -22,8 +22,11 @@ export default function Product(props) {
               alt="green iguana"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {props.product.name}
+              <Typography className="cardProductName" gutterBottom variant="body1" component="div">
+                {props.product.name.slice(0,20)}{props.product.name.length>20 && <span>...</span>}
+              </Typography>
+              <Typography className="cardProductPrice" gutterBottom variant="body1" component="div">
+              ₹{props.product.price}
               </Typography>
               <Typography
                 className="one-ratings"

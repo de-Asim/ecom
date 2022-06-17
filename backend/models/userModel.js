@@ -9,18 +9,18 @@ const userSchema = new mongoose.Schema({
     name:{
         type:String,
         default:"asim",
-        required:true
+        required:[true,"Please enter your name"]
     },
     email:{
         type:String,
-        required:[true,"please enter your email"],
-        unique:true,
-        validate:[isEmail,"please check your email"]
+        required:[true,"Please enter your email"],
+        unique:[true,"Account already exists on this email"],
+        validate:[isEmail,"Please check your email"]
     },
     password:{
         type:String,
-        required:[true,"please enter your password"],
-        minlength:[8,"password should be of atleast 8 charecters"]
+        required:[true,"Please enter your password"],
+        minlength:[8,"Password should be of atleast 8 charecters"]
     },
     role:{
         type:String,

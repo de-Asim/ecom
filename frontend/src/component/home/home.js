@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import {useSelector,useDispatch} from "react-redux"
-import { getProduct } from '../../actions/productAction';
-import Product from '../../component/Product/Product'
+import { clearErrors, getProduct } from '../../actions/productAction';
+import Product from '../../component/ProductCard/Product'
 import './home.css'
 import Loader from '../../component/loader/loader'
 import Pagination from "react-js-pagination"
-import {useParams} from "react-router-dom"
+import {useAlert} from "react-alert"
+import SecondaryHeader from '../header/secondaryHeader/secondaryHeader';
 
 const Home = () => {
+    const alert = useAlert();
     const dispatch = useDispatch();
-    const params=useParams()
 
     const[currentPage,setCurrentPage]=useState(1)
     const setCurrentPageNo=(e)=>{
         setCurrentPage(e)
     }
-    const keyword=params.keyword
     useEffect(()=>{
-        dispatch(getProduct(keyword,currentPage))
-    },[dispatch,keyword,currentPage]);
+        if(error){
+            return alert.error(error)
+          }
+        dispatch(getProduct(currentPage))
+    },[dispatch,currentPage]);
 
     const {loading,error,products,productsCount,resultPerPage}=useSelector((state)=>state.products)
 
     return (
         <>
+        <SecondaryHeader/>
         {loading ? (<Loader/>) :(<>
             <div className='productContainer'>{products && products.map((elem)=><Product product={elem}/>)}</div>
 
