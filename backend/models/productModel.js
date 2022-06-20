@@ -32,10 +32,11 @@ const productSchema = new mongoose.Schema({
         type:String,
         required:[true,"please enter product category"]
     },
-    // stock:{
-    //     required:[true,"Please enter the no of stocks"],
-    //     default:1
-    // },
+    stock:{
+        type:Number,
+        required:[true,"Please enter the no of stocks"],
+        default:1
+    },
     numOfReviews:{
         type:Number,
         default:0

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import './signIn.css'
 import Loader from "../loader/loader";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { FiMail } from 'react-icons/fi'
 import { BiLockOpenAlt } from 'react-icons/bi'
 import { MdFace } from 'react-icons/md'
@@ -13,6 +13,8 @@ function SignIn() {
     const dispatch = useDispatch();
     const alert = useAlert();
     const navigate = useNavigate()
+    const params = useParams()
+    const [ search ] = useSearchParams()
 
     const { error, loading, isAuthenticated } = useSelector(
         (state) => state.user
@@ -76,7 +78,13 @@ function SignIn() {
         }
 
         if (isAuthenticated) {
-            navigate('/');
+            const redirect=search.get('redirect')
+            if (redirect){
+                navigate(`/${redirect}`)
+            }
+            else{
+                navigate(`/`)
+            }
         }
     }, [dispatch, error, alert, isAuthenticated]);
 

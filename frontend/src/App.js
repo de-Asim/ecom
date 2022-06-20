@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 import ChangePassword from "./component/ChangePassword/ChangePassword";
 import ForgetPassword from "./component/ChangePassword/ForgetPassword";
 import ResetPassword from "./component/ChangePassword/ResetPassword";
+import Cart from "./component/Cart/Cart";
 
 const options = {
   // you can also just use 'bottom center'
@@ -51,6 +52,7 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/password/forgot" element={<ForgetPassword />} />
             <Route path="/password/reset/:resetToken" element={<ResetPassword />} />
+            <Route path="/cart" element={<Cart/>} />
           </Routes>
         </Router>
         <Footer />

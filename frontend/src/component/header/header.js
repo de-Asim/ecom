@@ -51,7 +51,7 @@ function Header() {
             <div className="primaryNavContentBoxRight">
             <Link to={`/profile`} className='navLinkReset'><div className="userName">{user.name.split(" ")[0].slice(0,10)}</div></Link>
               <div>Orders</div>
-              <div><FaShoppingCart /><span className='mobileHide'>Cart</span></div>
+              <Link to={`/cart`} className='navLinkReset'> <div><FaShoppingCart /><span className='mobileHide'>Cart</span></div></Link>
               <div onClick={()=>{logoutFun()}}><FiLogOut /><span className='mobileHide'>Log Out</span></div>
             </div>
           </> : <Link to={`/signin`} className='logInNavBtn'><div ><CgLogIn/>Log In</div></Link>}
