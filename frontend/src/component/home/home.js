@@ -7,6 +7,7 @@ import Loader from '../../component/loader/loader'
 import Pagination from "react-js-pagination"
 import {useAlert} from "react-alert"
 import SecondaryHeader from '../header/secondaryHeader/secondaryHeader';
+import PaginationComp from '../layout/PaginationComp';
 
 const Home = () => {
     const alert = useAlert();
@@ -30,23 +31,7 @@ const Home = () => {
         <SecondaryHeader/>
         {loading ? (<Loader/>) :(<>
             <div className='productContainer'>{products && products.map((elem)=><Product product={elem}/>)}</div>
-
-            {resultPerPage<productsCount && <div className="paginationContainer">
-                <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={ productsCount }
-                onChange={setCurrentPageNo}
-                nextPageText="Next"
-                prevPageText="Prev"
-                firstPageText={"First"}
-                lastPageText="Last"
-                itemClass='page-item'
-                linkClass='page-link'
-                activeClass='pageItemActive'
-                activeLinkClass='pageLinkActive'
-                />
-            </div>}
+            <PaginationComp currentPage={currentPage} resultPerPage={resultPerPage} count={productsCount} setCurrentPageNo={setCurrentPageNo}/>
         </>)}
         </>
     )

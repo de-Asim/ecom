@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./component/header/header";
 import "./App.css";
 import Home from "./component/home/home";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate,Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import Loader from "./component/loader/loader";
 import Footer from "./component/footer/footer";
 import ProductDetails from "./component/ProductDetails/productDetails";
@@ -18,6 +18,13 @@ import ChangePassword from "./component/ChangePassword/ChangePassword";
 import ForgetPassword from "./component/ChangePassword/ForgetPassword";
 import ResetPassword from "./component/ChangePassword/ResetPassword";
 import Cart from "./component/Cart/Cart";
+import Shipping from "./component/Shipping/Shipping";
+import axios from "axios";
+import Payment from "./component/Shipping/Payment";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Order from "./component/Order/Order";
+import OrderDetails from "./component/Order/orderDetails/OrderDetails";
 
 const options = {
   // you can also just use 'bottom center'
@@ -30,33 +37,50 @@ const options = {
 
 function App() {
   const { isAuthenticated, loading, user } = useSelector((state) => state.user)
+
+  const [stripeApiKey, setStripeApiKey] = useState("")
+  async function getStripeApiKey() {
+    const { data } = await axios.get('/api/v1/payment/stripeapikey')
+    setStripeApiKey(data.stripeApiKey)
+  }
+
   useEffect(() => {
     store.dispatch(userProfile())
+    getStripeApiKey()
   }, [])
 
   return (
-    <>{loading===false ? 
+    <>{loading === false ?
       <AlertProvider template={AlertTemplate} {...options}>
         <Router>
           <Header />
+          {stripeApiKey && <Elements stripe={loadStripe(stripeApiKey)}>
+            <Routes>
+            <Route exact path="/payment" element={<Payment />} />
+            </Routes>
+          </Elements>}
           <Routes>
             <Route exact path="/profile" element=
-              {!isAuthenticated ?<Navigate to="/signin" /> : <Profile />}/>
+              {!isAuthenticated ? <Navigate to="/signin" /> : <Profile />} />
             <Route exact path="/password/change" element=
-              {!isAuthenticated ?<Navigate to="/signin" /> : <ChangePassword />}/>
+              {!isAuthenticated ? <Navigate to="/signin" /> : <ChangePassword />} />
             <Route exact path="/" element={<Home />} />
-            <Route path="/loader" element={<Loader />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/category/:category" element={<ProductsPage />} />
-            <Route path="/search/:keyword" element={<ProductsPage />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/password/forgot" element={<ForgetPassword />} />
-            <Route path="/password/reset/:resetToken" element={<ResetPassword />} />
-            <Route path="/cart" element={<Cart/>} />
+            <Route exact path="/loader" element={<Loader />} />
+            <Route exact path="/product/:id" element={<ProductDetails />} />
+            <Route exact path="/category/:category" element={<ProductsPage />} />
+            <Route exact path="/search/:keyword" element={<ProductsPage />} />
+            <Route exact path="/signin" element={<SignIn />} />
+            <Route exact path="/password/forgot" element={<ForgetPassword />} />
+            <Route exact path="/password/reset/:resetToken" element={<ResetPassword />} />
+            <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/shipping" element={<Shipping />} />
+            <Route exact path="/orders" element={<Order />} />
+            <Route exact path="/order/details/:id" element={<OrderDetails />} />
+
           </Routes>
         </Router>
         <Footer />
-      </AlertProvider> : <Loader/>}
+      </AlertProvider> : <Loader />}
     </>
   );
 }

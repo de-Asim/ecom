@@ -7,8 +7,11 @@ const category = require('./routes/categoryRouter');
 const bodyParser = require('body-parser')
 const cookieParser = require("cookie-parser")
 const fileUpload = require('express-fileupload')
+const dotenv = require('dotenv')
 
 const errorMiddleware = require("./middleware/err")
+
+dotenv.config({path:"backend/config/config.env"});
 
 app.use(express.json());
 app.use(cookieParser())

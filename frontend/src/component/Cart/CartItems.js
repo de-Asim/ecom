@@ -10,12 +10,12 @@ function CartItems(props) {
     const dispatch = useDispatch()
 
     const decQty =()=>{
-        if(props.product.quantity > 0){
+        if(props.product.quantity > 1){
             dispatch(addToCart(props.product.productId,props.product.quantity-1))
         }
     }
     const incQty =()=>{
-        if(props.product.stock >= props.product.quantity){
+        if(props.product.stock > props.product.quantity){
             dispatch(addToCart(props.product.productId,props.product.quantity+1))
         }
     }

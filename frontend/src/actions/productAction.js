@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ALL_PRODUCT_FAIL, ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, CLEAR_ERRORS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS } from "../constants/productConstant";
+import { ALL_PRODUCT_FAIL, ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, CLEAR_ERRORS, CLEAR_MSG, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_REVIEW_FAIL, PRODUCT_REVIEW_REQUEST, PRODUCT_REVIEW_SUCCESS } from "../constants/productConstant";
 
 export const getProduct = (currentPage=1,keyword="",category,priceRange=[0,1000000],rating=0)=>async(dispatch)=>{
     try {
@@ -36,6 +36,25 @@ export const getProductDetails = (id)=>async(dispatch)=>{
         })
     }
 }
+export const reviewProduct = (id,rating,message)=>async(dispatch)=>{
+    try {
+        dispatch({ type:PRODUCT_REVIEW_REQUEST})
+        const config = { headers: { "Content-Type": "application/json" } };
+        const {data} = await axios.put(`/api/v1//product/review/${id}`,{rating,message},config);
+        dispatch({
+            type:PRODUCT_REVIEW_SUCCESS,
+            payload:data
+        })
+    } catch (error) {
+        dispatch({
+            type:PRODUCT_REVIEW_FAIL,
+            payload:error.response.data.err
+        })
+    }
+}
 export const clearErrors =()=>async(dispatch)=>{
     dispatch({type:CLEAR_ERRORS})
+}
+export const clearMsg =()=>async(dispatch)=>{
+    dispatch({type:CLEAR_MSG})
 }

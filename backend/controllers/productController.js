@@ -77,10 +77,10 @@ exports.getProduct = asyncErr(async (req, res, next) => {
 
 // product review & rating
 exports.productReview = asyncErr(async (req, res, next) => {
-  const { name, rating, message } = req.body;
+  const { rating, message } = req.body;
   const review = {
     user: req.user._id,
-    name: name,
+    name: req.user.name,
     rating: rating,
     message: message
   };
@@ -115,7 +115,7 @@ exports.productReview = asyncErr(async (req, res, next) => {
   product.reviews.forEach((e)=>{
     ratingSum += Number(e.rating);
   })
-  product.ratings = ratingSum/product.numOfReviews;
+  product.ratings = Math.round(ratingSum*10/product.numOfReviews)/10;
   await product.save({validateBeforeSave:false})
 
   res.status(201).json({

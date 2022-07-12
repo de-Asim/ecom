@@ -20,7 +20,6 @@ function Cart() {
         });
     }, [cartItems])
 
-    console.log(cartItems)
     return (
         <>
             <div className="cartCon">
@@ -40,15 +39,15 @@ function Cart() {
                                     <div>Gross Total</div>
                                     <div>₹{total}</div>
                                 </div>
-                                <button onClick={()=>{if(!isAuthenticated){navigate('/signin?redirect=shipping')}else{navigate('/shipping')}}}>Check Out</button>
+                                <button onClick={() => { if (!isAuthenticated) { navigate('/signin?redirect=shipping') } else { navigate('/shipping') } }}>Check Out</button>
                             </div>
                         </div>
-                    </div> :<div className='emptyCartParent'>
-                    <div className='emptyCartBox'>
-                        <div className='emptyCartBoxSvg' ><ImSad/></div>
-                        <div>Looks like you haven't added anything.</div>
-                        <Link to={'/'}><button>Shop Now</button></Link>
-                    </div>
+                    </div> : <div className='emptyCartParent'>
+                        <div className='emptyCartBox'>
+                            <div className='emptyCartBoxSvg' ><ImSad /></div>
+                            <div>Looks like you haven't added anything.</div>
+                            <Link to={'/'}><button>Shop Now</button></Link>
+                        </div>
                     </div>}
             </div>
         </>

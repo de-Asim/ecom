@@ -1,7 +1,6 @@
 .loaderContainer{
-    /* background-color: red; */
     height: calc(100vh - 17px);
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

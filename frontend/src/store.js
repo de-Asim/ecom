@@ -5,6 +5,7 @@ import { productDetailsReducer, productReducer } from "./reducers/productReducer
 import { AllCategoryReducer, FrontPageCategoryReducer } from "./reducers/categoryReducers";
 import { userReducer } from "./reducers/userReducer";
 import { cartReducer } from "./reducers/cartReducer";
+import { orderReducer } from "./reducers/orderReducer";
 
 const reducer = combineReducers({
     products:productReducer,
@@ -12,14 +13,27 @@ const reducer = combineReducers({
     AllCategories:AllCategoryReducer,
     frontPageCategories:FrontPageCategoryReducer,
     user:userReducer,
-    cart:cartReducer
+    cart:cartReducer,
+    order:orderReducer
 });
+
+function getTotal(e) {
+    let total = 0
+    if(typeof(e)==='object'){
+        e.forEach((elem) => {
+            total += (elem.price * elem.quantity)
+        })
+    }
+    return total
+}
 
 let initialState ={
     cart:{
         cartItems:localStorage.getItem("cartItems")
         ? JSON.parse(localStorage.getItem('cartItems'))
-        : []
+        : [],
+        total:getTotal(localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem('cartItems')):0)
     }
 };
 const middleware = [thunk];

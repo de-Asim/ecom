@@ -3,9 +3,14 @@
     width: 100%;
     min-height: 40rem !important;
     padding: 0 5rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+}
+.productDetails div,
+.productDetails span{
+    font-family: 'Baloo 2', cursive;
 }
 .productDetails .carouselCon{
     width: 50%;
@@ -59,10 +64,12 @@
     outline: none;
     cursor: pointer;
     padding: 0.3rem 1rem;
-    background-color: blue;
+    background-color: #ffb300;
     color: white;
     border-radius: 20px;
     margin-left: 1rem;
+    font-family:  'poppins', cursive;
+    font-size: .9rem;
 }
 .prductDesc div:nth-child(1){
     font-size: 1.4rem;
@@ -85,10 +92,19 @@
 .reviewMid{
     width: 46%;
 }
+.reviewHeadingBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.ratingPagination .MuiTablePagination-selectLabel,
+.ratingPagination .MuiInputBase-root{
+    display: none;
+}
 .reviewCon .reviewHeading{
     font-size:1.5rem ;
     font-weight: bold;
-    margin-bottom: 1rem;
 }
 .reviewCardCon{
     display: flex;
@@ -99,6 +115,20 @@
     text-align: center;
     width: 100%;
     margin-top: 1rem;
+}
+.reviewBtn{
+    border: none;
+    outline: none;
+    background-color: #FAAF00;
+    padding: .5rem 1rem;
+    font-family: 'poppins', cursive;
+    cursor: pointer;
+    border-radius: 25px;
+    color: white;
+    margin-top: 1rem;
+}
+#reviewInput{
+    width: 30rem;
 }
 @media (max-width:768px) {
     .productDetails{
@@ -115,5 +145,10 @@
     }
     .reviewCon>div{
         width: 100% !important;
+    }
+}
+@media (max-width:450px) {
+    #reviewInput{
+        width: 95vw;
     }
 }

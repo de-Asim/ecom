@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Kalam&family=Poppins&display=swap');
+.shippingCon {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding:2rem 5rem;
+  background-color: #F1F3F6;
+  color: var(--black-text);
+  font-family: 'Baloo 2', cursive;
+}
+.shippingCon div,
+.shippingCon span,
+.shippingCon input,
+.shippingCon select
+{
+  font-family: 'Baloo 2', cursive;
+}
+.shippingBox {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.shippingBoxLeft {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.shippingBoxRight {
+  width: 40%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  height: fit-content;
+}
+.shippingBoxLeftTop {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.shippingBoxLeftTop > div:nth-child(1) {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgb(69, 69, 69);
+  text-transform: uppercase;
+}
+.shippingBoxLeftTop > div:nth-child(2) > span {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.shippingBoxLeftAddress {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.shippingBoxHeader {
+  background-color: var(--black-btn);
+  color: white;
+  padding: 0.6rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.shipingAddress {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.shipingAddress .shipingAddressName {
+  font-weight: bold;
+}
+.shipingAddress .shipingAddressType {
+  background-color: rgb(238, 238, 238);
+  margin: 0 0.7rem;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #616161;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 1px;
+}
+.shipingAddress>div{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.shipingAddress > div > :nth-child(2) {
+  text-transform: capitalize;
+  font-size: .9rem;
+}
+.shipingAddressPIN {
+  font-weight: bold;
+}
+
+.round {
+  position: relative;
+  right: 1rem;
+  bottom: 0.4rem;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.removeAddressBtn{
+  background-color: transparent;
+  border: none;
+  color: #FF8329;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+.removeAddressBtn:hover{
+  color: orangered;
+}
+.addAdress {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.addAddressForm {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.addAddressForm > div {
+  display: flex;
+  gap: 1rem;
+}
+.addAddressForm > div > input,
+.addAddressForm > div > select {
+  width: 50%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid silver;
+  outline: none;
+}
+
+.addAddressForm textarea {
+  padding: 0.5rem 0.8rem;
+  resize: none;
+  border: 1px solid silver;
+  outline: none;
+}
+.selectAddressType {
+  flex-direction: column;
+}
+.selectAddressType > div {
+  display: flex;
+  gap: 2rem;
+}
+.selectAddressType > div > div {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.shippingBoxRight .orderItems {
+  margin: 1rem 3rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-bottom: 1px dashed black;
+}
+.shippingBoxRight .orderItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.shippingBoxRight .orderItem > span:nth-child(1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shippingBoxRightTotal {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 3rem 1rem 3rem;
+}
+
+.saveAddBtn{
+  background-color: #FF8329;
+  border: none;
+  padding: 0.7rem 2.5rem;
+  cursor: pointer;
+  color: white;
+  font-size: .9rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  transition: all .4s;
+}
+.saveAddBtn:hover{
+  background-color:#ff8229e2 ;
+}
+.cancelBtn{
+  font-size: .9rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  color: #FF8329;
+}
+.cancelBtn:hover{
+  color: orangered;
+}
+.selectAddressType{
+  margin-bottom: .6rem;
+}
+.selectAddressType>div{
+  font-size: .9rem;
+}
+.selectAddressType>span{
+  font-size: .8rem;
+  text-transform: capitalize;
+  color: #616161;
+}
+.shippingProceedBtn{
+  background-color: #FF8329;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: .6rem 3rem;
+  font-size: .9rem;
+  border-radius: 2rem;
+  margin: 1rem 2rem 1rem 1rem;
+  float: right;
+  cursor: pointer;
+}
+@media (max-width:1000px) {
+  .shippingCon{
+    padding:2rem 3rem !important;
+  }
+}
+@media (max-width:850px) {
+  .shippingCon{
+    padding:2rem 2rem !important;
+  }
+}
+@media (max-width:768px) {
+  .shippingCon{
+    min-height: fit-content;
+    padding:2rem 2rem !important;
+  }
+  .shippingBox{
+    display: flex;
+    flex-direction: column;
+  }
+  .shippingBox>div{
+    width: 100%;
+  }
+}
+@media (max-width:560px) {
+  .shippingCon{
+    min-height: fit-content;
+    padding:1rem !important;
+  }
+  .shippingBox{
+    display: flex;
+    flex-direction: column;
+  }
+  .shippingBox>div{
+    width: 100%;
+  }
+}
