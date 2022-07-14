@@ -1,0 +1,10 @@
+.topPagination{
+    display: flex;
+    gap: 1rem;
+}
+.topPagination button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}

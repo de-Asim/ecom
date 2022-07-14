@@ -92,6 +92,7 @@ function Payment() {
                         myForm.set("mobile", shippingAddress.mobile);
                         myForm.set("type", shippingAddress.type);
                         myForm.set("productName", item.name);
+                        myForm.set("category", item.category);
                         myForm.set("productImg", item.image);
                         myForm.set("quantity", item.quantity);
                         myForm.set("unitPrice", item.price);

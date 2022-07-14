@@ -18,7 +18,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
-import TablePagination from '@mui/material/TablePagination';
+import TopPagination from '../layout/TopPagination'
 
 
 function ProductDetails() {
@@ -51,17 +51,16 @@ function ProductDetails() {
   }
 
   // Review Pagination
-  // const reviewPerPage=2
-  // const [page, setPage] = React.useState(1);
-  // const [pageStart,setPageStart]=useState(0)
-  // const [pageEnd,setPageEnd]=useState(reviewPerPage)
+  const reviewPerPage = 5
+  const [page, setPage] = React.useState(0);
+  const [pageStart, setPageStart] = useState(0)
+  const [pageEnd, setPageEnd] = useState(reviewPerPage)
 
-  // const handleChangePage = (event, newPage) => {
-  //   setPage(newPage);
-  //   console.log(page)
-  //   setPageStart(newPage*reviewPerPage)
-  //   setPageEnd(pageStart+(reviewPerPage))
-  // };
+  const handleChangePage = (newPage) => {
+    setPage(newPage);
+    setPageStart(newPage * reviewPerPage)
+    setPageEnd((newPage * reviewPerPage) + reviewPerPage)
+  };
 
   //  Review modal
   const [open, setOpen] = React.useState(false);
@@ -180,14 +179,9 @@ function ProductDetails() {
               <div className="reviewMid">
                 <div className='reviewHeadingBox'>
                   <div className='reviewHeading'>Top Reviews:</div>
-                  {/* <TablePagination
-                    component="div"
-                    count={100}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    rowsPerPage={reviewPerPage}
-                    className="ratingPagination"
-                  /> */}
+                    <TopPagination page={page} pageStart={pageStart} pageEnd={pageEnd} total={product.numOfReviews} reviewPerPage={reviewPerPage} handleChangePage={handleChangePage}/>
+                  {/* here */}
+
                 </div>
                 <div className='reviewCardCon'>
                   {product.reviews && product.reviews.slice(pageStart, pageEnd).map((review) => <ReviewCard review={review} />)}
@@ -196,7 +190,6 @@ function ProductDetails() {
             </div> :
             <div className='noReviewFound'><div>No reviews found</div>
               <button className='reviewBtn' onClick={handleClickOpen}>Write a product review</button>
-
             </div>
 
 

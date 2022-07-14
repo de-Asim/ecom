@@ -25,6 +25,9 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Order from "./component/Order/Order";
 import OrderDetails from "./component/Order/orderDetails/OrderDetails";
+import PermissionError from "./component/layout/error/PermissionError";
+import Dashboard from "./component/Dashboard/Dashboard";
+import Admin from "./component/Dashboard/Admin";
 
 const options = {
   // you can also just use 'bottom center'
@@ -36,7 +39,7 @@ const options = {
 }
 
 function App() {
-  const { isAuthenticated, loading, user } = useSelector((state) => state.user)
+  const { isAuthenticated, isAdmin, loading, user } = useSelector((state) => state.user)
 
   const [stripeApiKey, setStripeApiKey] = useState("")
   async function getStripeApiKey() {
@@ -56,7 +59,7 @@ function App() {
           <Header />
           {stripeApiKey && <Elements stripe={loadStripe(stripeApiKey)}>
             <Routes>
-            <Route exact path="/payment" element={<Payment />} />
+              <Route exact path="/payment" element={<Payment />} />
             </Routes>
           </Elements>}
           <Routes>
@@ -76,6 +79,12 @@ function App() {
             <Route exact path="/shipping" element={<Shipping />} />
             <Route exact path="/orders" element={<Order />} />
             <Route exact path="/order/details/:id" element={<OrderDetails />} />
+            {/* admin */}
+            <Route path="/admin" element={!isAuthenticated || !isAdmin ? <PermissionError /> : <Admin />} >
+              <Route index element={<Dashboard />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="order" element={<Dashboard />} />
+            </Route>
 
           </Routes>
         </Router>

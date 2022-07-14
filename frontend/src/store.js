@@ -6,6 +6,7 @@ import { AllCategoryReducer, FrontPageCategoryReducer } from "./reducers/categor
 import { userReducer } from "./reducers/userReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import { orderReducer } from "./reducers/orderReducer";
+import { adminReducer } from "./reducers/adminReducer";
 
 const reducer = combineReducers({
     products:productReducer,
@@ -14,7 +15,8 @@ const reducer = combineReducers({
     frontPageCategories:FrontPageCategoryReducer,
     user:userReducer,
     cart:cartReducer,
-    order:orderReducer
+    order:orderReducer,
+    admin:adminReducer
 });
 
 function getTotal(e) {

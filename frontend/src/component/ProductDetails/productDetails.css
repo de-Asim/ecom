@@ -98,10 +98,7 @@
     justify-content: space-between;
     margin-bottom: 1rem;
 }
-.ratingPagination .MuiTablePagination-selectLabel,
-.ratingPagination .MuiInputBase-root{
-    display: none;
-}
+
 .reviewCon .reviewHeading{
     font-size:1.5rem ;
     font-weight: bold;

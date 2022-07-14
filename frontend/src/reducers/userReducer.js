@@ -6,37 +6,37 @@ export const userReducer = ((state = { user: {} }, action) => {
         case LOGIN_REQUEST:
             return {
                 loading: true,
-                isAuthenticated:false,
+                isAuthenticated: false,
                 user: {}
             };
         case LOGIN_SUCCESS:
             return {
                 loading: false,
-                isAuthenticated:true,
+                isAuthenticated: true,
                 user: action.payload.user
             };
         case LOGIN_FAIL:
             return {
                 loading: false,
-                isAuthenticated:false,
+                isAuthenticated: false,
                 error: action.payload
             };
         case REGISTER_REQUEST:
             return {
                 loading: true,
-                isAuthenticated:false,
+                isAuthenticated: false,
                 user: {}
             };
         case REGISTER_SUCCESS:
             return {
                 loading: false,
-                isAuthenticated:true,
+                isAuthenticated: true,
                 user: action.payload.user
             };
         case REGISTER_FAIL:
             return {
                 loading: false,
-                isAuthenticated:false,
+                isAuthenticated: false,
                 error: action.payload
             };
         case UPDATE_REQUEST:
@@ -49,7 +49,7 @@ export const userReducer = ((state = { user: {} }, action) => {
                 ...state,
                 loading: false,
                 user: action.payload.user,
-                msg:'Update Successfull'
+                msg: 'Update Successfull'
             };
         case UPDATE_FAIL:
             return {
@@ -67,7 +67,7 @@ export const userReducer = ((state = { user: {} }, action) => {
                 ...state,
                 loading: false,
                 user: action.payload.user,
-                msg:'Password Updated Successfully'
+                msg: 'Password Updated Successfully'
             };
         case UPDATE_PASS_FAIL:
             return {
@@ -86,71 +86,84 @@ export const userReducer = ((state = { user: {} }, action) => {
                 msg: null
             };
         case PROFILE_REQUEST:
-            return{
-                loading:true,
-                isAuthenticated:false,
-                user:{}
+            return {
+                loading: true,
+                isAuthenticated: false,
+                isAdmin: false,
+                user: {}
             }
         case PROFILE_SUCCESS:
-            return{
-                loading:false,
-                isAuthenticated:true,
-                user:action.payload
+            if (action.payload.role === 'admin') {
+                return {
+                    loading: false,
+                    isAuthenticated: true,
+                    isAdmin: true,
+                    user: action.payload
+                }
+
+            }
+            return {
+                loading: false,
+                isAuthenticated: true,
+                isAdmin: false,
+                user: action.payload
             }
         case PROFILE_FAIL:
-            return{
-                loading:false,
-                isAuthenticated:false,
+            return {
+                loading: false,
+                isAdmin: false,
+                isAuthenticated: false,
             }
         case LOGOUT_SUCCESS:
-            return{
-                loading:false,
-                isAuthenticated:false,
-                user:null
+            return {
+                loading: false,
+                isAuthenticated: false,
+                isAdmin: false,
+                user: null
             }
         case LOGOUT_FAIL:
-            return{
+            return {
                 ...state,
-                loading:false,
-                error:action.payload
+                loading: false,
+                error: action.payload
             }
         case FORGOT_PASS_REQUEST:
-            return{
+            return {
                 ...state,
-                loading:true,
+                loading: true,
             }
         case FORGOT_PASS_SUCCESS:
-            return{
+            return {
                 ...state,
-                loading:false,
-                msg:'Recovery mail sent'
+                loading: false,
+                msg: 'Recovery mail sent'
             }
-            case FORGOT_PASS_FAIL:
-                return{
-                    ...state,
-                    loading:false,
-                    error:action.payload,
+        case FORGOT_PASS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
             }
         case RESET_PASS_REQUEST:
-            return{
+            return {
                 ...state,
-                isAuthenticated:false,
-                loading:true,
+                isAuthenticated: false,
+                loading: true,
             }
         case RESET_PASS_SUCCESS:
-            return{
+            return {
                 ...state,
-                loading:false,
-                user:action.payload.user,
-                isAuthenticated:true,
-                msg:'Password changed successfully'
+                loading: false,
+                user: action.payload.user,
+                isAuthenticated: true,
+                msg: 'Password changed successfully'
             }
-            case RESET_PASS_FAIL:
-                return{
-                    ...state,
-                    loading:false,
-                    isAuthenticated:false,
-                    error:action.payload,
+        case RESET_PASS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                isAuthenticated: false,
+                error: action.payload,
             }
         default:
             return state

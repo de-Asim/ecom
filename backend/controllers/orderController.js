@@ -111,7 +111,7 @@ exports.getAddress = asyncErr(async(req,res,next)=>{
 
 // create order
 exports.createOrder = asyncErr(async(req,res,next)=>{
-    const{id,name, address, city, state, country, PIN, mobile, type, productName, productImg, quantity, unitPrice, price, tax, total} = req.body;
+    const{id,name, address, city, state, country, PIN, mobile, type, productName,category, productImg, quantity, unitPrice, price, tax, total} = req.body;
     const order =await Order.create({
         shipping:{
             name,
@@ -126,6 +126,7 @@ exports.createOrder = asyncErr(async(req,res,next)=>{
         productId: id,
         productInfo:{
             productName,
+            category,
             productImg,
             quantity,
             unitPrice,

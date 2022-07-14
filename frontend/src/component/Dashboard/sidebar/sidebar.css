@@ -1,0 +1,41 @@
+.sidebar{
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    min-height: 95vh;
+    overflow: hidden;
+}
+.sidebar p{
+    padding-left: .8rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: rgb(65, 65, 65);
+    font-size: 1.2rem !important;
+}
+.sidebar p span{
+    font-size: 1.1rem !important;
+}
+.sidebar .MuiTreeItem-iconContainer{
+    width: auto;
+}
+.sidebar .MuiTreeItem-label{
+    color: rgb(65, 65, 65);
+    font-size: 1.1rem !important;
+}
+.MuiTreeItem-group .MuiCollapse-wrapperInner{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem !important;
+    padding-top: .5rem;
+}
+.MuiTreeItem-content {
+    background-color: #fff !important;
+  }
+.sidebar .linkReset{
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+}

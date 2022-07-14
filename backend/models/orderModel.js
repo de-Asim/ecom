@@ -49,6 +49,9 @@ const orderSchema = new mongoose.Schema({
             type: String,
             required: [true, "Product name not found"]
         },
+        category: {
+            type: String,
+        },
         productImg: {
             type: String
         },

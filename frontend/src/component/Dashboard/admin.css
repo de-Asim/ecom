@@ -1,0 +1,55 @@
+.adminCon {
+  display: flex;
+}
+.adminCon > div:nth-child(1) {
+  transition: all 0.3s;
+}
+.adminCon > div:nth-child(3) {
+  height: 95vh;
+  min-width: calc(100% - 15rem);
+  width: 100%;
+  overflow: auto;
+  box-shadow: inset 5px 0px 3px -3px rgb(214, 214, 214);
+  background-color: rgb(245, 245, 245);
+}
+
+.adminCon > div:nth-child(3)::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sideBarHandlerBtn {
+  position: absolute;
+  top: 4rem;
+  background-color: transparent;
+  padding: 0rem .5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  transition: all .3s;
+}
+@media (max-width:768px) {
+    .sideBarHandlerBtn{
+        top: 6.4rem;
+    }
+    .adminCon > div:nth-child(1){
+        position: absolute;
+        background-color: white;
+        transition: all .1s;
+    }
+
+}
+/* Track */
+.adminCon > div:nth-child(3)::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.adminCon > div:nth-child(3)::-webkit-scrollbar-thumb {
+  background: rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.adminCon > div:nth-child(3)::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
