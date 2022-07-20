@@ -124,7 +124,7 @@ function Shipping() {
     }, [dispatch, error, msg, alert])
 
     useEffect(() => {
-        if (address.length === 0) {
+        if (address && address.length === 0) {
             setIsNewAddress('block')
         }
         else {

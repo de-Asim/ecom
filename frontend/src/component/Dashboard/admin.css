@@ -3,6 +3,7 @@
 }
 .adminCon > div:nth-child(1) {
   transition: all 0.3s;
+  z-index: 99;
 }
 .adminCon > div:nth-child(3) {
   height: 95vh;
@@ -52,4 +53,7 @@
 /* Handle on hover */
 .adminCon > div:nth-child(3)::-webkit-scrollbar-thumb:hover {
   background: #555555;
+}
+.adminCon *{
+  font-family: 'Baloo 2', cursive !important;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 function Footer() {
@@ -9,30 +10,10 @@ function Footer() {
           <div className="footer1-content-heading">About</div>
           <ul className="footer1-content-text">
             <li>
-              <a href="">About Us</a>
+              <Link to={'/about'}>About Us</Link>
             </li>
             <li>
-              <a href="">Contact Us</a>
-            </li>
-            <li>
-              <a href="">Career</a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer1-content">
-          <div className="footer1-content-heading">Help</div>
-          <ul className="footer1-content-text">
-            <li>
-              <a href="">payment</a>
-            </li>
-            <li>
-              <a href="">refund</a>
-            </li>
-            <li>
-              <a href="">cancellation</a>
-            </li>
-            <li>
-              <a href="">misc</a>
+              <Link to={'/contact'}>Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -40,31 +21,27 @@ function Footer() {
           <div className="footer1-content-heading">Policy</div>
           <ul className="footer1-content-text">
             <li>
-              <a href="">Return policy</a>
+              <a href="#">Return policy</a>
             </li>
             <li>
-              <a href="">Cancellation policy</a>
+              <a href="#">Cancellation policy</a>
             </li>
             <li>
-              <a href="">privacy</a>
+              <a href="#">privacy</a>
             </li>
           </ul>
         </div>
         <div className="footer1-content">
           <div className="footer1-content-heading">Mail Us</div>
           <div className="footer1-content-text">
-            Flipkart Internet Private Limited, Buildings Alyssa, Begonia & Clove
-            Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village,
-            Bengaluru, 560103, Karnataka, India
+          Asim Kumar De, A1, Ashroy Apartment, Dhalipara, Kestopur, New Town, Kolkata - 700102, West Bengal, India
           </div>
         </div>
         <div className="footer1-content">
           <div className="footer1-content-heading">Address</div>
           <div className="footer1-content-text">
-            Flipkart Internet Private Limited, Buildings Alyssa, Begonia & Clove
-            Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village,<br />
-            Bengaluru, 560103, Karnataka, India <br /> CIN : U51109KA2012PTC066107
-            <br /> Telephone: 1800 202 9898
+            Asim Kumar De, A1, Ashroy Apartment, Dhalipara, Kestopur, New Town, Kolkata - 700102, West Bengal, India<br /> CIN Fake : T53506KF2022PTC0000000
+            <br /> Mobile: +91 7718243653
           </div>
         </div>
       </div>

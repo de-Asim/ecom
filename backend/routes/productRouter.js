@@ -1,12 +1,14 @@
 const express = require('express');
 const { route } = require('../app');
-const { createProduct, getAllProducts, updateProduct, deleteProduct, getProduct, productReview, getReviews, deleteReviews } = require('../controllers/productController');
+const { createProduct, getAllProducts, updateProduct, deleteProduct, getProduct, productReview, getReviews, deleteReviews, getAllProductsAdmin } = require('../controllers/productController');
 const { isAuth, isAdmin } = require('../middleware/auth');
 const router = express.Router();
 
 router.route("/product/new").post(isAuth,isAdmin,createProduct);
 
 router.route("/product").get(getAllProducts);
+
+router.route("/admin/product").get(getAllProductsAdmin);
 
 
 router.route("/product/review/:id").put(isAuth,productReview)

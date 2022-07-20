@@ -24,6 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: .5rem;
     border: 1px solid rgb(222, 222, 222);
 }
 .orderDetailsCon .detailsCon div{
@@ -60,4 +61,28 @@
 }
 .shippingAddress{
     margin-bottom: .7rem;
+}
+@media (max-width:700px) {
+    .detailsCon{
+        padding: 1rem 3rem !important;
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .detailsConRight{
+        flex-direction: row;
+        justify-content: space-between !important;
+        gap: 1rem;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    .detailsConMid{
+        width: 100% !important;
+    }
+}
+@media (max-width:450px) {
+    .detailsCon,
+    .addressCon{
+        padding: 1rem 2rem !important;
+    }
+
 }

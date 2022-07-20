@@ -8,8 +8,7 @@ import Pagination from "react-js-pagination"
 import './productPage.css'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import { createTheme } from '@mui/material/styles';
-
+import Loader from '../loader/loader'
 function valuetext(value) {
     return `${value}°C`;
 }
@@ -56,7 +55,7 @@ function ProductsPage() {
         console.log('object');
     }
     return (
-        <>
+        <>{loading ? <Loader/>:
             <div className='ProductPage'>
                 <div className="productsPageLeft">
                     <div className="priceSlider">
@@ -120,7 +119,7 @@ function ProductsPage() {
                         </div>}
                     </>}</div>
                 </div>
-            </div>
+            </div>}
         </>
     )
 }

@@ -25,9 +25,15 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Order from "./component/Order/Order";
 import OrderDetails from "./component/Order/orderDetails/OrderDetails";
-import PermissionError from "./component/layout/error/PermissionError";
 import Dashboard from "./component/Dashboard/Dashboard";
 import Admin from "./component/Dashboard/Admin";
+import AllProduct from "./component/Dashboard/product/AllProduct";
+import CreateProduct from "./component/Dashboard/product/CreateProduct";
+import UpdateProduct from "./component/Dashboard/product/UpdateProduct";
+import AllUser from "./component/Dashboard/user/AllUser";
+import AllOrder from "./component/Dashboard/order/AllOrder";
+import UpdateOrder from "./component/Dashboard/order/UpdateOrder";
+import PageNotFound from "./component/pageNotFound/PageNotFound";
 
 const options = {
   // you can also just use 'bottom center'
@@ -80,15 +86,20 @@ function App() {
             <Route exact path="/orders" element={<Order />} />
             <Route exact path="/order/details/:id" element={<OrderDetails />} />
             {/* admin */}
-            <Route path="/admin" element={!isAuthenticated || !isAdmin ? <PermissionError /> : <Admin />} >
+            <Route path="/admin" element={!isAuthenticated || !isAdmin ? <PageNotFound /> : <Admin />} >
               <Route index element={<Dashboard />} />
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="order" element={<Dashboard />} />
+              <Route path="product/all" element={<AllProduct />} />
+              <Route path="product/new" element={<CreateProduct />} />
+              <Route path="product/update/:id" element={<UpdateProduct />} />
+              <Route path="user/all" element={<AllUser />} />
+              <Route path="order" element={<AllOrder />} />
+              <Route path="order/:id" element={<UpdateOrder />} />
             </Route>
-
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
+          <Footer />
         </Router>
-        <Footer />
       </AlertProvider> : <Loader />}
     </>
   );

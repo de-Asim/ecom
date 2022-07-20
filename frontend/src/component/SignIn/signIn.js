@@ -36,7 +36,6 @@ function SignIn() {
     const { name, email, password } = user;
 
     const [avatar, setAvatar] = useState("");
-    const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
 
     const loginSubmit = (e) => {
         e.preventDefault();
@@ -56,10 +55,8 @@ function SignIn() {
     const registerDataChange = (e) => {
         if (e.target.name === "avatar") {
             const reader = new FileReader();
-
             reader.onload = () => {
                 if (reader.readyState === 2) {
-                    setAvatarPreview(reader.result);
                     setAvatar(reader.result);
                 }
             };
@@ -182,7 +179,6 @@ function SignIn() {
                                         onChange={registerDataChange}
                                     />
                                 </div>
-
                                 <div id="registerImage">
                                     <input
                                         type="file"
@@ -191,6 +187,10 @@ function SignIn() {
                                         onChange={registerDataChange}
                                     />
                                 </div>
+                                {avatar && avatar !='' &&
+                                <div className="avatarPreview">
+                                    <img src={avatar} alt="" />
+                                </div>}
                                 <input type="submit" value="Register" className="signUpBtn" />
                             </form>
                         </div>

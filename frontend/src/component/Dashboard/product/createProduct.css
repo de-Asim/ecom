@@ -1,0 +1,130 @@
+.createProductParent{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+.createProductParent>form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding:2rem 2rem 3rem 2rem;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    margin-bottom: 2rem;
+}
+.createProductParent>form>p{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    display: inline-block;
+    color: #4c5056;
+    font-family: 'Poppins', sans-serif;
+}
+.createProductParent>form>p>span{
+    padding:0 1rem .5rem 1rem;
+    border-bottom: 1px solid #c7c7c7;
+}
+.createProductParent>form>div{
+    display: flex;
+    gap: 1.3rem;
+    width: 100%;
+}
+.createProductParent>form>button{
+    background-color: #2e343c;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: .7rem;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.createProductParent>form input,
+.createProductParent>form textarea,
+.createProductParent>form select
+{
+    font-family: 'Baloo 2', cursive !important;
+}
+
+.MuiTextField-root{
+    width: 100%;
+}
+.MuiTextField-root label.Mui-focused{
+    color: grey !important;
+}
+.MuiTextField-root:hover fieldset,
+.MuiTextField-root:focus fieldset,
+.MuiSelect-root:focus fieldset,
+.MuiTextField-root:focus-within fieldset,
+.MuiSelect-root:focus-within fieldset,
+.MuiOutlinedInput-root:focus,
+.MuiOutlinedInput-root:focus-within
+{
+    border-color: grey !important;
+
+}
+.createProductImgInput{
+    border: 1px solid silver;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    color: #767373;
+    cursor: pointer;
+}
+.imageUploadDiv{
+    flex-direction: column;
+}
+.imageNameCon{
+    display: block;
+    text-align: center;
+    font-size: .7rem;
+    color: #2e343c;
+}
+.imagePreviewCon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.productImgPreview{
+    width: fit-content;
+    max-width: 5rem;
+    height: 3rem;
+    position: relative;
+    cursor: pointer;
+}
+.productImgPreview>img{
+    max-width: 100%;
+    height: 100%;
+}
+.productImgPreview>div{
+    background-color: rgba(0, 0, 0, 0.425);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition:all .4s;
+}
+.productImgPreview:hover div{
+    visibility: visible;
+    opacity: 1;
+}
+@media (max-width:500px) {
+    .createProductParent{
+        padding:3rem 1rem !important;
+    }
+    .createProductParent>form{
+        padding: 1.5rem 1rem 2rem 1rem;
+    }
+    .createProductParent>form>p{
+        margin-bottom: 1.5rem;
+    }
+}

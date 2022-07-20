@@ -1,0 +1,61 @@
+.allProductsParent{
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+}
+.allProductsParent .MuiDataGrid-columnHeader{
+    background-color: #08CC8E;
+    color: white;
+    padding:0 1rem !important;
+}
+.allProductsParent .MuiDataGrid-iconSeparator{
+    display: none !important;
+}
+.MuiDataGrid-cell{
+    padding: 0 1rem !important;
+}
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-cell:focus-within,
+.MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-columnHeader:focus-within
+{
+    outline: none !important;
+}
+.MuiDataGrid-root{
+background-color: white !important;
+}
+.actionCon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+.actionCon>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1rem;
+}
+.actionCon>button:hover{
+    color:red;
+}
+.actionCon>.editBtn{
+    color: black !important;
+    transition: .3s;
+}
+.actionCon>.editBtn:hover{
+    color:orange !important;
+}
+#alert-dialog-title{
+    min-width: 20rem;
+}
+@media (max-width:768px) {
+    .allProductsParent{
+        padding: 3rem 1rem !important;
+    }
+    #alert-dialog-title{
+        min-width: 18rem;
+    }
+}

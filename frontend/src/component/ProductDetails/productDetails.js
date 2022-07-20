@@ -122,11 +122,11 @@ function ProductDetails() {
     <>
       {loading ? <Loader /> : <div className="productDetails">
         {product ? <>
-          <div className='carouselCon'>
-            <Carousel>
+          <div className='carouselCon' h>
+            <Carousel className='carousel'>
               {product.image &&
                 product.image.map((item, i) => {
-                  return <img className='carouselImage' key={item.source} src={item.source} alt={`Slide ${i}`} />
+                  return <div className='carouselImageParent'><img className='carouselImage' key={item.source} src={item.source} alt={`Slide ${i}`} /></div>
                 })}
             </Carousel>
           </div>

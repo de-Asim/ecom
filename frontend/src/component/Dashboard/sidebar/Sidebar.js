@@ -24,18 +24,12 @@ function Sidebar() {
             <TreeItem nodeId="1" label="Products">
                 <Link className='linkReset' to='/admin/product/all'><TreeItem nodeId="2" label="All Products" icon={<HiViewGrid/>}/></Link>
                 <Link className='linkReset' to='/admin/product/new'><TreeItem nodeId="3" label="Create New" icon={<HiOutlineViewGridAdd/>}/></Link>
-                <Link className='linkReset' to='/admin/product'><TreeItem nodeId="4" label="Search Product" icon={<FaTshirt/>}/></Link>
+                {/* <Link className='linkReset' to='/admin/product'><TreeItem nodeId="4" label="Search Product" icon={<FaTshirt/>}/></Link> */}
             </TreeItem>
         </TreeView>
-        <TreeView defaultExpandIcon={<ExpandMoreIcon/>} defaultCollapseIcon={<ChevronRightIcon/>}>
-            <TreeItem nodeId="users1" label="Users">
-                <Link className='linkReset' to='/admin/user/all'><TreeItem nodeId="users2" label="All Users" icon={<FaUserFriends/>}/></Link>
-                <Link className='linkReset' to='/admin/user/update'><TreeItem nodeId="users3" label="Update Role" icon={<FaUserEdit/>}/></Link>
-                <Link className='linkReset' to='/admin/user/delete'><TreeItem nodeId="users4" label="Delete User" icon={<FaUserTimes/>}/></Link>
-            </TreeItem>
-        </TreeView>
+        <Link className='linkReset' to='/admin/user/all'><p><FaUserFriends/><span>Users</span></p></Link>
         <Link className='linkReset' to='/admin/order'><p><RiShoppingCart2Fill/><span>Orders</span></p></Link>
-        <Link className='linkReset' to='/admin/review'><p><MdReviews/><span>Reviews</span></p></Link>
+        {/* <Link className='linkReset' to='/admin/review'><p><MdReviews/><span>Reviews</span></p></Link> */}
     </div>
     </>
   )

@@ -3,7 +3,7 @@
     width: 100%;
     min-height: 40rem !important;
     padding: 0 5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1rem !important;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -14,11 +14,29 @@
 }
 .productDetails .carouselCon{
     width: 50%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+.carousel{
+    width: 100% !important;
+    height: 100% !important;
+}
+.carousel div{
+    height: 100% !important;
+}
+.carouselImageParent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .carouselImage{
     margin: auto;
     display: block;
-    max-width: 100%;
+    max-width: 90%;
+    max-height: 100%;
 }
 .productDetails .detailCon{
     width: 50%;
@@ -143,9 +161,15 @@
     .reviewCon>div{
         width: 100% !important;
     }
+    .productDetails .carouselCon{
+        height: 30rem !important;
+    }
 }
 @media (max-width:450px) {
     #reviewInput{
         width: 95vw;
+    }
+    .productDetails .carouselCon{
+        height: 20rem !important;
     }
 }

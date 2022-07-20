@@ -37,6 +37,14 @@ const productSchema = new mongoose.Schema({
         required:[true,"Please enter the no of stocks"],
         default:1
     },
+    ordered:{
+        type:Number,
+        default:0
+    },
+    delivered:{
+        type:Number,
+        default:0
+    },
     numOfReviews:{
         type:Number,
         default:0

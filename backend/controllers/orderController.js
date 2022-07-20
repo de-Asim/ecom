@@ -3,6 +3,7 @@ const ErrorHandler = require("../utils/errorHandler");
 const asyncErr = require("../middleware/asyncErr");
 const Address = require("../models/addressModel");
 const ApiFeature = require("../utils/apiFeatures");
+const Product = require("../models/productModel");
 
 // add address
 exports.addAddress = asyncErr(async(req,res,next)=>{
@@ -138,8 +139,14 @@ exports.createOrder = asyncErr(async(req,res,next)=>{
         },
         user:req.user._id,
         createdAt:Date.now(),
-        status:"proccessing"
+        status:"Processing"
     });
+    if(order){
+        const product = await Product.findById(id)
+        product.stock-=quantity
+        product.ordered+=quantity
+        await product.save({validateBeforeSave:false})
+    }
 
     res.status(201).json({
         success:true,
@@ -228,7 +235,6 @@ exports.updateOrders = asyncErr(async(req,res,next)=>{
     })
     await order.save({validateBeforeSave:false})
     res.status(200).json({
-        success:true,
-        order
+        success:true
     })
 })

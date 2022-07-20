@@ -37,6 +37,22 @@ exports.createUser = asyncErr(async (req, res, next) => {
       url: myCloud.secure_url,
     },
   });
+
+  const message = `Hey ${name},\n
+  I’m Asim Kumar De, the founder of deKart and I’d like to personally thank you for signing up to our service.
+  We established deKart in order to serve best quality products to your doorstep at lowest possible cost.
+  I’d love to hear what you think of deKart and if there is anything we can improve. If you have any questions, please reply to this email. I’m always happy to help!
+  
+  Asim Kumar De`
+  try {
+    sendEmail({
+      email: user.email,
+      subject: `Welcome Mail`,
+      message,
+    });
+  } catch (error) {
+
+  }
   sendToken(user, 201, res);
 });
 
@@ -77,7 +93,7 @@ exports.forgot = asyncErr(async (req, res, next) => {
   const resetToken = user.generateResetToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetUrl = `http://192.168.0.9:3000/password/reset/${resetToken}`;
+  const resetUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`;
   const message = `Hello ${user.name}\n\nTo reset your password please click on:- \n\n${resetUrl}\n\nIf your havn't requeseted please ignore.\n\n\n*This is an auto generated mail please don't reply.`;
 
   try {
@@ -206,7 +222,7 @@ exports.updateUserDetails = asyncErr(async (req, res, next) => {
 
 // get all user --admin
 exports.getAllUser = asyncErr(async (req, res, next) => {
-  const users = await User.find({ "role": "user" });
+  const users = await User.find();
   if (!users) {
     return next(new ErrorHandler("No user found", 404))
   }

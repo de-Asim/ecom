@@ -14,11 +14,11 @@ export default function Product(props) {
     <>
       {props.product && (
         <Link className="link" to={`/product/${props.product._id}`}><Card sx={{ maxWidth: "calc(50vw - 1rem)" }}>
-          <CardActionArea >
+          <CardActionArea sx={{width:'15rem',maxWidth: "calc(50vw - 1rem)"}}>
             <CardMedia
               component="img"
               height="240"
-              image="/img/product.jpg"
+              image={props.product.image[0].source}
               alt="green iguana"
             />
             <CardContent>

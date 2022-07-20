@@ -246,6 +246,9 @@
 .selectAddressType>div{
   font-size: .9rem;
 }
+.selectAddressType label{
+  cursor: pointer;
+}
 .selectAddressType>span{
   font-size: .8rem;
   text-transform: capitalize;

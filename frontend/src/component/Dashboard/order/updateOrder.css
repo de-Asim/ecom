@@ -1,0 +1,26 @@
+.addressConParent{
+    display: flex;
+    gap: 1rem;
+}
+.addressConParent>div{
+    width: 100%;
+    position: relative;
+}
+.addressConParent .editOrderStatusCon{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selectStatusInput{
+    width: 100% !important;
+}
+@media (max-width:768px) {
+    .addressConParent{
+        flex-wrap:wrap-reverse ;
+    }
+    .addressConParent .editOrderStatusCon{
+        position: relative;
+    }
+}

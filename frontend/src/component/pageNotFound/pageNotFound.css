@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Walter+Turncoat&display=swap');
+.pageNotFounCon{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.pageNotFounCon div{
+    position: relative;
+    top: -3rem;
+    font-size: 3rem;
+    font-family: 'Walter Turncoat', cursive;
+    color: var(--black-text);
+}
+.pageNotFounCon button{
+    position: relative;
+    top: -3rem;
+    border: none;
+    background-color: gold;
+    padding: .6rem 4rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--black-text);
+}

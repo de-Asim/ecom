@@ -79,6 +79,7 @@ function OrderDetails() {
                             activeColor={activeColor}
                             size={25}
                             circleFontSize={10}
+                            titleFontSize={'1rem'}
                             completeBarColor={"#5096FF"}
                         />
                     </div>
