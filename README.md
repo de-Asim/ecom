@@ -1,6 +1,6 @@
 # Welcome to deKart!
 
-Tech Stack -- MERN
+Tech Stack -- MERN \n
 Author -- Asim Kumar De
 
 
