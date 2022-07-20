@@ -45,11 +45,11 @@ Hello I'm **Asim Kumar De**
 
 **Email** -- info.asimde01@gmail.com
 
-**Facebook** -- facebook.com/asim.de.18
+**Facebook** -- https://facebook.com/asim.de.18
 
-**Instagram** -- instagram.com/de_asim01/
+**Instagram** -- https://instagram.com/de_asim01/
 
-**LinkedIn** -- linkedin.com/in/asim-kumar-de-9ba417171/
+**LinkedIn** -- https://linkedin.com/in/asim-kumar-de-9ba417171/
 
 **WhatsApp** -- 7718243653
 
