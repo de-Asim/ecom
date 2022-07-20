@@ -6,7 +6,6 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import { CgLogIn } from 'react-icons/cg'
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import { useAlert } from "react-alert";
 import { logout } from '../../actions/userAction';
 

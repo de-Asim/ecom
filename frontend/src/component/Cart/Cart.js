@@ -23,7 +23,7 @@ function Cart() {
     return (
         <>
             <div className="cartCon">
-                {cartItems.length != 0 ?
+                {cartItems.length !== 0 ?
                     <div className="cartBox">
                         <table className='cartTable'>
                             <tr>

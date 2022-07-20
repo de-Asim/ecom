@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {useSelector,useDispatch} from "react-redux"
-import { clearErrors, getProduct } from '../../actions/productAction';
+import { getProduct } from '../../actions/productAction';
 import Product from '../../component/ProductCard/Product'
 import './home.css'
 import Loader from '../../component/loader/loader'
-import Pagination from "react-js-pagination"
 import {useAlert} from "react-alert"
 import SecondaryHeader from '../header/secondaryHeader/secondaryHeader';
 import PaginationComp from '../layout/PaginationComp';

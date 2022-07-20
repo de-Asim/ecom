@@ -40,7 +40,7 @@ function ChangePassword() {
         alert.success(msg)
         dispatch(clearMsg());
       }
-    }, [error,msg,loading])
+    }, [dispatch,alert,error,msg,loading])
     
     return (
         <>

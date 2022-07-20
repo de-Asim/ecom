@@ -44,7 +44,7 @@ export const addNewAddress = (myForm) => async (dispatch) => {
         dispatch({type: ADD_NEW_ADDRESS_REQUEST})
         const config = { headers: { "Content-Type": "multipart/form-data" } };
 
-        const { data } = await axios.post(`/api/v1//order/address/add`, myForm, config)
+        await axios.post(`/api/v1//order/address/add`, myForm, config)
         dispatch({
             type: ADD_NEW_ADDRESS_SUCCESS
         })
@@ -61,7 +61,7 @@ export const removeAddress = (id) => async (dispatch) => {
     try {
         dispatch({type: REMOVE_ADDRESS_REQUEST})
 
-        const { data } = await axios.delete(`/api/v1/order/address/remove?id=${id}`)
+        await axios.delete(`/api/v1/order/address/remove?id=${id}`)
         dispatch({
             type: REMOVE_ADDRESS_SUCCESS
         })
@@ -78,7 +78,7 @@ export const newOrder = (formData) => async (dispatch) => {
     try {
         dispatch({type: ADD_ORDER_REQUEST})
         const config = { headers: { "Content-Type": "multipart/form-data" } };
-        const { data } = await axios.post(`/api/v1/order/new`,formData,config)
+        await axios.post(`/api/v1/order/new`,formData,config)
         dispatch({
             type: ADD_ORDER_SUCCESS
         })

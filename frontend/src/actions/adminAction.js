@@ -20,7 +20,7 @@ export const createNewProduct=(formData)=>async(dispatch)=>{
     try {
         dispatch({type:CREATE_PRODUCT_REQUEST})
         const config={headers: { "Content-Type": "multipart/form-data" }}
-        const {data} = await axios.post(`/api/v1/product/new`,formData,config)
+        await axios.post(`/api/v1/product/new`,formData,config)
         dispatch({
             type:CREATE_PRODUCT_SUCCESS,
         })

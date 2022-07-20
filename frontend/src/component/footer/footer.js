@@ -21,13 +21,13 @@ function Footer() {
           <div className="footer1-content-heading">Policy</div>
           <ul className="footer1-content-text">
             <li>
-              <a href="#">Return policy</a>
+              <a href="/#">Return policy</a>
             </li>
             <li>
-              <a href="#">Cancellation policy</a>
+              <a href="/#">Cancellation policy</a>
             </li>
             <li>
-              <a href="#">privacy</a>
+              <a href="/#">privacy</a>
             </li>
           </ul>
         </div>

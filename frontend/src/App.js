@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./component/header/header";
 import "./App.css";
 import Home from "./component/home/home";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Loader from "./component/loader/loader";
 import Footer from "./component/footer/footer";
 import ProductDetails from "./component/ProductDetails/productDetails";
@@ -45,7 +45,7 @@ const options = {
 }
 
 function App() {
-  const { isAuthenticated, isAdmin, loading, user } = useSelector((state) => state.user)
+  const { isAuthenticated, isAdmin, loading } = useSelector((state) => state.user)
 
   const [stripeApiKey, setStripeApiKey] = useState("")
   async function getStripeApiKey() {
