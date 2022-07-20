@@ -15,11 +15,8 @@ Author -- Asim Kumar De
 Make sure to create a config file in backend/config
 
 DB_URI= 
-
 PORT =
-
 SECRET_KEY=
-
 EXPIRE_JWT=
 COOKIE_EXPIRE=
 CLOUDINARY_NAME=
